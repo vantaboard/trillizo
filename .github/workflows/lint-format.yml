@@ -4,7 +4,7 @@ on:
     branches:
       - develop
 jobs:
-  lint:
+  lint-format-test:
     name: Lint
     runs-on: ubuntu-latest
     steps:
@@ -33,5 +33,10 @@ jobs:
         run: npm run type-check
       - name: Test
         run: npm test
-      - name: Commit
-        run: git commit -am "style(source):\ lint and format"
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: Brighten Tompkins
+          author_email: brightenqtompkins@gmail.com
+          message: 'style(source): lint and format'
+          add: '.'
