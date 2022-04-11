@@ -34,4 +34,4 @@ jobs:
       - name: Test
         run: npm test
       - name: Commit
-        run: git commit -am "style(source): lint and format"
+        run: git commit -am "style(source):\ lint and format"
